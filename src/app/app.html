@@ -1,0 +1,14 @@
+<app-header-component></app-header-component>
+
+<app-home *ngIf="virtualRouter.activateRoute === 'home'"></app-home>
+<app-all *ngIf="virtualRouter.activateRoute === 'all'"></app-all>
+<app-detail *ngIf="virtualRouter.activateRoute === 'detail'"></app-detail>
+
+<app-footer-component></app-footer-component>
+
+<app-login-modal></app-login-modal>
+<app-register-modal></app-register-modal>
+<app-change-password></app-change-password>
+<app-forgot-password></app-forgot-password>
+<app-cursor></app-cursor>
+<app-back-to-top></app-back-to-top>

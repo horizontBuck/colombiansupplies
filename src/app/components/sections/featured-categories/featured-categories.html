@@ -1,0 +1,56 @@
+<!-- Destination Section -->
+<section class="section destination-section">
+    <div class="container">
+      <div class="row justify-content-center align-items-end g-3">
+        <div class="col-md-8">
+          <div class="section-header-six">
+            <span class="badge badge-soft-primary rounded-pill mb-1">Explora</span>
+            <h2>
+              Categorías destacadas<span class="text-primary">.</span>
+            </h2>
+            <p class="mb-0 text-muted" *ngIf="filteredCategories().length === 0">
+              Cargando categorías...
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4 text-md-end">
+          <a routerLink="/tours" class="btn btn-dark sec-head-btn">
+            Ver todas las categorías
+            <i class="isax isax-arrow-right-3 ms-2"></i>
+          </a>
+        </div>
+      </div>
+      <div *ngIf="filteredCategories().length > 0 && showCarousel()"
+        #carousel
+        class="js-featured-categories owl-carousel categories-slider-six">
+     <div class="categories-card"
+          *ngFor="let cat of filteredCategories(); trackBy: trackById; let i = index">
+        <a routerLink="/tours" [queryParams]="{ category: cat.id }">
+          <img [src]="cat.image || 'assets/img/placeholders/category.jpg'"
+               [alt]="cat.name || 'Categoría'" loading="lazy"/>
+        </a>
+    
+        <div class="cat-content d-flex align-items-center justify-content-between">
+          <div>
+            <h5 class="text-white mb-1">{{ cat.name }}</h5>
+            <span class="text-white text-truncate d-block" style="max-width:240px;">
+              {{ cat.description || 'Explora tours' }}
+            </span>
+          </div>
+          <a routerLink="/tours" [queryParams]="{ category: cat.id }" class="loc-view-bottom">
+            <i class="isax isax-arrow-right-1"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Estado vacío -->
+
+<div class="text-center py-5" *ngIf="filteredCategories().length === 0">
+    <small class="text-muted">No hay categorías activas por ahora.</small>
+    </div>
+    
+    </div>
+  </section>
+  <!-- /Destination Section -->
+  
