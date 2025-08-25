@@ -400,7 +400,7 @@ $(document).ready(function () {
       },
       colors: ['#147aec', '#3538CD', '#0E9384', '#fe7e03', '#98AA30'],
       series: [25, 15, 35, 5, 20],
-      labels: ['Cruise', 'Cars', 'Hotels', 'Tour','Flights'],
+      labels: ['Cestería y Fibras Naturales', 'Mesa y Cocina', 'Joyería', 'Hogar y Decoración','Moda y Accesorios'],
       plotOptions: {
         pie: {
           donut: {
@@ -2435,10 +2435,10 @@ if ($('#plan-overview').length > 0) {
         },
       },
       series: [{
-        name: 'Income',
+        name: 'Ingresos',
         data: [40, 30, 45, 80, 85, 90, 80, 80, 80, 85, 20, 80]
       }, {
-        name: 'Expenses',
+        name: 'Gastos',
         data: [60, 70, 55, 20, 15, 10, 20, 20, 20, 15, 80, 20]
       }],
       xaxis: {
@@ -2642,10 +2642,10 @@ if ($('#plan-overview').length > 0) {
         },
       },
       series: [{
-        name: 'Income',
+        name: 'Ingreso',
         data: [5000, 16000, 8000, 5000, 4000, 5000, 12000, 5000, 8000, 5000, 5000, 8000]
       }, {
-        name: 'Expenses',
+        name: 'Gasto',
         data: [5000, 4000, 4000, 5000, 8000, 5000, 4000, 5000, 4000, 5000, 5000, 4000]
       }],
       xaxis: {
@@ -2722,10 +2722,10 @@ if ($('#plan-overview').length > 0) {
         },
       },
       series: [{
-        name: 'Income',
+        name: 'Ingreso',
         data: [5000, 16000, 8000, 5000, 4000, 5000, 12000, 5000, 8000, 5000, 5000, 8000]
       }, {
-        name: 'Expenses',
+        name: 'Gasto',
         data: [5000, 4000, 4000, 5000, 8000, 5000, 4000, 5000, 4000, 5000, 5000, 4000]
       }],
       xaxis: {
@@ -2818,7 +2818,7 @@ if ($('#plan-overview').length > 0) {
     }
   },
   colors: ['#155EEF', '#147aec', '#98AA30', '#fe7e03'],
-  labels: ['Hotels', 'Cars', 'Tours', 'Flights'],
+  labels: ['Joyería', 'Mesa y Cocina', 'Hogar y Decoración', 'Moda y Accesorios'],
   responsive: [{
     breakpoint: 480,
     options: {

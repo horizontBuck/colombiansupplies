@@ -350,11 +350,11 @@ Template Name: DreamsTour - Bootstrap Template
 				if (isLess) {
 					isLess = false;
 					container.style.height = container.scrollHeight + 'px'; 
-					button.innerHTML = "Show Less";
+					button.innerHTML = "Mostrar Menos";
 				} else {
 					isLess = true;
 					container.style.height = '148px';
-					button.innerHTML = "Show More";
+					button.innerHTML = "Mostrar Mas";
 				}
 			}	
 			button.addEventListener('click', viewMoreLess);
@@ -625,11 +625,11 @@ Template Name: DreamsTour - Bootstrap Template
         if (isLess) {
           isLess = false;
           container.style.height = container.scrollHeight + "px";
-          button.innerHTML = "Show Less";
+          button.innerHTML = "Mostrar Menos";
         } else {
           isLess = true;
           container.style.height = "148px";
-          button.innerHTML = "Show More";
+          button.innerHTML = "Mostrar Mas";
         }
       }
       button.addEventListener("click", viewMoreLess);
@@ -731,11 +731,11 @@ Template Name: DreamsTour - Bootstrap Template
 				if (isLess) {
 					isLess = false;
 					container.style.height = container.scrollHeight + 'px'; 
-					button.innerHTML = "Show Less";
+					button.innerHTML = "Mostrar Menos";
 				} else {
 					isLess = true;
 					container.style.height = '70px';
-					button.innerHTML = "Show More";
+					button.innerHTML = "Mostrar Mas";
 				}
 			}	
 			button.addEventListener('click', viewMoreLess);
@@ -749,7 +749,7 @@ Template Name: DreamsTour - Bootstrap Template
       const policyInfo = policyWrap.find('.policy-info');
       policyInfo.slideToggle('hide');
       policyWrap.toggleClass('expanded');      
-      $(this).text(policyInfo.hasClass('hide') ? 'Show More' : 'Show Less');
+      $(this).text(policyInfo.hasClass('hide') ? 'Mostrar Mas' : 'Mostrar Menos');
     });
   }
 
@@ -1702,7 +1702,7 @@ Template Name: DreamsTour - Bootstrap Template
 		$(".more-text").hide();
 		$(".more-link").on("click", function() {
 			$(this).addClass("less");
-	 		$(this).text($(this).text() === "Show Less" ? "Show More" : "Show Less");
+	 		$(this).text($(this).text() === "Mostrar Menos" ? "Mostrar Mas" : "Mostrar Menos");
 	 		$(".more-text").slideToggle(900);
 		});	  	
 	}

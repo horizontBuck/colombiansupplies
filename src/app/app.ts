@@ -11,6 +11,7 @@ import { BackToTop } from './components/shared/back-to-top/back-to-top';
 import { Home } from './components/views/home/home';
 import { All } from './components/views/all/all';
 import { Detail } from './components/views/detail/detail';
+import { Dashboard } from './components/views/dashboard/dashboard';
 import { VirtualRouter } from './services/virtual-router';
 @Component({
   selector: 'app-root',
@@ -30,7 +31,7 @@ import { VirtualRouter } from './services/virtual-router';
     All,
     Home,
     Detail,
-
+    Dashboard,
     
   ],
   templateUrl: './app.html',
@@ -39,6 +40,6 @@ import { VirtualRouter } from './services/virtual-router';
 export class App {
   protected readonly title = signal('colombia-tours');
   constructor( public virtualRouter: VirtualRouter) {
-    this.virtualRouter.navigate('home');
+    this.virtualRouter.navigate('dashboard');
   }
 }
