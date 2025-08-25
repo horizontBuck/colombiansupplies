@@ -3,6 +3,7 @@ import { ScriptLoaderService } from '../../../services/script-loader.service';
 import { RecentlyAdded } from '../../dashboard-sections/recently-added/recently-added';
 import { CommonModule } from '@angular/common';
 import { RecentInvoices } from "../../dashboard-sections/recent-invoices/recent-invoices";
+import { RecentOrders } from '../../dashboard-sections/recent-orders/recent-orders';
 
 declare const bootstrap: any;
 
@@ -12,7 +13,8 @@ declare const bootstrap: any;
   imports: [
     CommonModule,
     RecentlyAdded,
-    RecentInvoices
+    RecentInvoices,
+    RecentOrders,
 ],
   templateUrl: './dashboard.html',
   styleUrls: ['./dashboard.css']

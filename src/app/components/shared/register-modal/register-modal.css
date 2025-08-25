@@ -1,0 +1,41 @@
+/* Modal ancho cómodo */
+.modal-dialog.modal-xl { max-width: 980px; }
+
+/* Stepper */
+.stepper { display: flex; align-items: center; gap: 8px; }
+.step {
+  width: 28px; height: 28px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: #e9ecef; color: #6c757d; font-weight: 600;
+}
+.step.active { background: #198754; color: #fff; }
+.step.done { background: #198754; color: #fff; opacity: .7; }
+.line { width: 48px; height: 3px; background: #e9ecef; border-radius: 2px; }
+.line.active { background: #198754; }
+
+/* Selector tipo de cuenta */
+.account-option {
+  display: flex; flex-direction: column; align-items: center;
+  cursor: pointer; padding: 8px; border: 2px solid transparent;
+  border-radius: 8px; transition: all .2s ease;
+}
+.account-option img { width: 90px; height: auto; }
+.account-label { margin-top: 6px; font-weight: 600; color: #198754; }
+.account-option.active { border-color: #198754; background-color: #f8f9fa; }
+
+/* Separador “O” */
+.login-or { position: relative; text-align: center; }
+.login-or .span-or { background: #fff; padding: 0 .75rem; position: relative; z-index: 1; }
+.login-or::before {
+  content: ""; position: absolute; left: 0; right: 0; top: 50%;
+  height: 1px; background: #e9ecef; transform: translateY(-50%);
+}
+.stepper {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* 👈 centra todo */
+    gap: 8px;
+    width: 100%; /* ocupa el ancho */
+  }
+  

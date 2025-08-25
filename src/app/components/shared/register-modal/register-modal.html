@@ -1,143 +1,139 @@
-<!-- Register Modal -->
 <div class="modal fade" id="register-modal">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header d-flex align-items-center justify-content-end pb-0 border-0">
-          <a href="javascript:void(0);" data-bs-dismiss="modal" aria-label="Close">
-            <i class="ti ti-x fs-20"></i>
-          </a>
+  <div class="modal-dialog modal-dialog-centered ">
+    <div class="modal-content">
+
+      <div class="modal-header d-flex align-items-center justify-content-between pb-0 border-0 w-100">
+        <div class="stepper">
+          <div class="step" [class.done]="currentStep>1" [class.active]="currentStep===1">1</div>
+          <div class="line" [class.active]="currentStep>1"></div>
+          <div class="step" [class.done]="currentStep>2" [class.active]="currentStep===2">2</div>
+          <div class="line" [class.active]="currentStep>2"></div>
+          <div class="step" [class.active]="currentStep===3">3</div>
         </div>
-  
-        <div class="modal-body p-4 pt-0">
-          <!-- MENSAJES -->
-          <div *ngIf="errorMsg" class="alert alert-danger py-2">{{ errorMsg }}</div>
-          <div *ngIf="okMsg" class="alert alert-success py-2">{{ okMsg }}</div>
-  
-          <form (submit)="onSubmit($event)">
+        <a href="javascript:void(0);" data-bs-dismiss="modal" aria-label="Close">
+          <i class="ti ti-x fs-20"></i>
+        </a>
+      </div>
+
+      <div class="modal-body p-4 pt-0">
+        <div *ngIf="errorMsg" class="alert alert-danger py-2">{{ errorMsg }}</div>
+        <div *ngIf="okMsg" class="alert alert-success py-2">{{ okMsg }}</div>
+
+        <!-- Enlaza el Reactive Form -->
+        <form [formGroup]="form" (ngSubmit)="submit()">
+
+          <!-- PASO 1: Tipo -->
+          <section *ngIf="currentStep === 1">
             <div class="text-center border-bottom mb-3">
               <h5 class="mb-1">Regístrate</h5>
               <p class="mb-3">Crea tu cuenta</p>
             </div>
-  
-            <!-- Tipo de cuenta -->
-            <div class="mb-2">
-              <label class="form-label">Tipo de cuenta</label>
-              <select #accountTypeEl class="form-control form-control-lg"
-                      (change)="onAccountTypeChange($event)">
-                <option value="cliente" selected>Cliente</option>
-                <option value="proveedor">Proveedor</option>
-              </select>
-            </div>
-  
-            <!-- Nombre -->
-            <div class="mb-2">
-              <label class="form-label">Nombre</label>
-              <div class="input-icon">
-                <span class="input-icon-addon">
-                  <i class="isax isax-user"></i>
-                </span>
-                <input #nameEl type="text" class="form-control form-control-lg" placeholder="Nombre" required />
+
+            <label class="form-label d-block text-center mb-3">Tipo de cuenta</label>
+            <div class="d-flex justify-content-center gap-4">
+              <div class="account-option"
+                   [class.active]="selectedAccountType === 'cliente'"
+                   (click)="setAccountType('cliente')">
+                <img src="assets/img/buyer.png" alt="Cliente">
+                <p class="account-label">Cliente</p>
+              </div>
+              <div class="account-option"
+                   [class.active]="selectedAccountType === 'proveedor'"
+                   (click)="setAccountType('proveedor')">
+                <img src="assets/img/seller.png" alt="Proveedor">
+                <p class="account-label">Artesano</p>
               </div>
             </div>
-  
-            <!-- Nombre comercial (solo proveedor) -->
-            <div class="mb-2" [style.display]="accountTypeValue === 'proveedor' ? '' : 'none'">
-              <label class="form-label">Nombre comercial (Proveedor)</label>
-              <div class="input-icon">
-                <span class="input-icon-addon"><i class="isax isax-briefcase"></i></span>
-                <input #businessEl type="text" class="form-control form-control-lg" placeholder="Mi Agencia / Empresa" />
+
+            <div class="d-flex justify-content-between mt-4">
+              <span></span>
+              <button type="button" class="btn btn-primary" (click)="next()">Continuar</button>
+            </div>
+          </section>
+
+          <!-- PASO 2: Datos -->
+          <section *ngIf="currentStep === 2">
+            <div class="row g-3">
+              <div class="col-lg-6">
+                <label class="form-label">Nombre</label>
+                <input formControlName="name" class="form-control form-control-lg" placeholder="Nombre">
+                <small class="text-danger" *ngIf="form.get('name')?.touched && form.get('name')?.invalid">
+                  Ingresa tu nombre (mín. 2 caracteres)
+                </small>
+              </div>
+
+              <div class="col-lg-6">
+                <label class="form-label">Email</label>
+                <input formControlName="email" type="email" class="form-control form-control-lg" placeholder="Email">
+                <small class="text-danger" *ngIf="form.get('email')?.touched && form.get('email')?.invalid">
+                  Email inválido
+                </small>
+              </div>
+
+              <div class="col-lg-6">
+                <label class="form-label">Contraseña</label>
+                <input formControlName="password" type="password" class="form-control form-control-lg" placeholder="Contraseña">
+                <small class="text-danger" *ngIf="form.get('password')?.touched && form.get('password')?.invalid">
+                  Mínimo 6 caracteres
+                </small>
+              </div>
+
+              <div class="col-lg-6">
+                <label class="form-label">Confirmar Contraseña</label>
+                <input formControlName="confirmPassword" type="password" class="form-control form-control-lg" placeholder="Confirmar Contraseña">
+                <small class="text-danger" *ngIf="form.errors?.['passwordMismatch'] && form.get('confirmPassword')?.touched">
+                  Las contraseñas no coinciden
+                </small>
+              </div>
+
+              <div class="col-12" *ngIf="selectedAccountType === 'proveedor'">
+                <label class="form-label">Nombre comercial (Proveedor)</label>
+                <input formControlName="companyName" class="form-control form-control-lg" placeholder="Mi Agencia / Empresa">
+                <small class="text-danger" *ngIf="form.get('companyName')?.touched && form.get('companyName')?.invalid">
+                  Obligatorio para proveedores
+                </small>
               </div>
             </div>
-  
-            <!-- Email -->
-            <div class="mb-2">
-              <label class="form-label">Email</label>
-              <div class="input-icon">
-                <span class="input-icon-addon">
-                  <i class="isax isax-message"></i>
-                </span>
-                <input #emailEl type="email" class="form-control form-control-lg" placeholder="Email" required />
-              </div>
+
+            <div class="d-flex justify-content-between mt-4">
+              <button type="button" class="btn btn-outline-secondary" (click)="back()">Atrás</button>
+              <button type="button" class="btn btn-primary" (click)="next()" [disabled]="!isStepValid()">Continuar</button>
             </div>
-  
-            <!-- Password -->
-            <div class="mb-2">
-              <label class="form-label">Contraseña</label>
-              <div class="input-icon">
-                <span class="input-icon-addon">
-                  <i class="isax isax-lock"></i>
-                </span>
-                <input #passEl [type]="showPass ? 'text' : 'password'"
-                       class="form-control form-control-lg pass-input" placeholder="Contraseña" required />
-                <span class="input-icon-addon toggle-password" (click)="togglePass()">
-                  <i class="isax" [class.isax-eye-slash]="!showPass" [class.isax-eye]="showPass"></i>
-                </span>
-              </div>
-            </div>
-  
-            <!-- Confirm Password -->
-            <div class="mb-2">
-              <label class="form-label">Confirmar Contraseña</label>
-              <div class="input-icon">
-                <span class="input-icon-addon">
-                  <i class="isax isax-lock"></i>
-                </span>
-                <input #pass2El [type]="showPass2 ? 'text' : 'password'"
-                       class="form-control form-control-lg pass-input" placeholder="Confirmar Contraseña" required />
-                <span class="input-icon-addon toggle-password" (click)="togglePass2()">
-                  <i class="isax" [class.isax-eye-slash]="!showPass2" [class.isax-eye]="showPass2"></i>
-                </span>
-              </div>
-            </div>
-  
-            <!-- Términos -->
-            <div class="mt-3 mb-3">
-              <div class="d-flex">
-                <div class="form-check d-flex align-items-center mb-2">
-                  <input #agreeEl class="form-check-input mt-0" type="checkbox" id="agree" />
-                  <label class="form-check-label ms-2 text-gray-9 fs-14" for="agree">
-                    Acepto los
-                    <a href="javascript:void(0);" class="link-primary fw-medium">Términos y Condiciones.</a>
-                  </label>
-                </div>
-              </div>
-            </div>
-  
-            <!-- Submit -->
+          </section>
+
+          <!-- PASO 3: Términos -->
+          <section *ngIf="currentStep === 3">
             <div class="mb-3">
-              <button type="submit" class="btn btn-xl btn-primary d-flex align-items-center justify-content-center w-100"
-                      [disabled]="loading">
-                <span *ngIf="!loading">Regístrate<i class="isax isax-arrow-right-3 ms-2"></i></span>
+              <div class="form-check">
+                <input class="form-check-input" id="agree" type="checkbox" formControlName="agree">
+                <label class="form-check-label" for="agree">
+                  Acepto los <a href="javascript:void(0);" class="link-primary fw-medium">Términos y Condiciones</a>.
+                </label>
+              </div>
+              <small class="text-danger" *ngIf="form.get('agree')?.touched && form.get('agree')?.invalid">
+                Debes aceptar los términos
+              </small>
+            </div>
+
+            <div class="d-flex justify-content-between">
+              <button type="button" class="btn btn-outline-secondary" (click)="back()">Atrás</button>
+              <button type="submit" class="btn btn-success" [disabled]="loading || !isStepValid()">
+                <span *ngIf="!loading">Registrarte</span>
                 <span *ngIf="loading">Creando cuenta…</span>
               </button>
             </div>
-  
-            <div class="login-or mb-3">
-              <span class="span-or">O</span>
-            </div>
-  
-            <div class="d-flex align-items-center mb-3">
-              <a href="javascript:void(0);" class="btn btn-light flex-fill d-flex align-items-center justify-content-center me-2">
-                <img src="assets/img/icons/google-icon.svg" class="me-2" alt="Img">Google
-              </a>
-              <a href="javascript:void(0);" class="btn btn-light flex-fill d-flex align-items-center justify-content-center">
-                <img src="assets/img/icons/fb-icon.svg" class="me-2" alt="Img">Facebook
-              </a>
-            </div>
-  
-            <div class="d-flex justify-content-center">
-              <p class="fs-14">
-                ¿Ya tienes una cuenta?
-                <a href="javascript:void(0);" class="link-primary fw-medium" data-bs-toggle="modal" data-bs-target="#login-modal">
-                  Iniciar Sesión
-                </a>
-              </p>
-            </div>
-          </form>
+          </section>
+        </form>
+
+        <!-- SIEMPRE visible -->
+        <div class="login-or my-3"><span class="span-or">O</span></div>
+        <div class="d-flex align-items-center mb-2">
+          <a class="btn btn-light flex-fill d-flex align-items-center justify-content-center me-2" href="javascript:void(0);">
+            <img src="assets/img/icons/google-icon.svg" class="me-2" alt="Google">Regístrate con Google
+          </a>
         </div>
-  
       </div>
+
     </div>
   </div>
-  <!-- /Register Modal -->
-  
+</div>
