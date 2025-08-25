@@ -55,8 +55,8 @@
           <section *ngIf="currentStep === 2">
             <div class="row g-3">
               <div class="col-lg-6">
-                <label class="form-label">Nombre</label>
-                <input formControlName="name" class="form-control form-control-lg" placeholder="Nombre">
+                <label class="form-label">Tu nombre</label>
+                <input formControlName="name" class="form-control form-control-lg" placeholder="Tu nombre">
                 <small class="text-danger" *ngIf="form.get('name')?.touched && form.get('name')?.invalid">
                   Ingresa tu nombre (mín. 2 caracteres)
                 </small>
@@ -88,7 +88,7 @@
 
               <div class="col-12" *ngIf="selectedAccountType === 'proveedor'">
                 <label class="form-label">Nombre comercial (Proveedor)</label>
-                <input formControlName="companyName" class="form-control form-control-lg" placeholder="Mi Agencia / Empresa">
+                <input formControlName="companyName" class="form-control form-control-lg" placeholder="Taller / Empresa / Tienda">
                 <small class="text-danger" *ngIf="form.get('companyName')?.touched && form.get('companyName')?.invalid">
                   Obligatorio para proveedores
                 </small>

@@ -8,10 +8,10 @@
   display: flex; align-items: center; justify-content: center;
   background: #e9ecef; color: #6c757d; font-weight: 600;
 }
-.step.active { background: #198754; color: #fff; }
-.step.done { background: #198754; color: #fff; opacity: .7; }
+.step.active { background: #46802F; color: #fff; }
+.step.done { background: #46802F; color: #fff; opacity: .7; }
 .line { width: 48px; height: 3px; background: #e9ecef; border-radius: 2px; }
-.line.active { background: #198754; }
+.line.active { background: #46802F; }
 
 /* Selector tipo de cuenta */
 .account-option {
@@ -20,8 +20,8 @@
   border-radius: 8px; transition: all .2s ease;
 }
 .account-option img { width: 90px; height: auto; }
-.account-label { margin-top: 6px; font-weight: 600; color: #198754; }
-.account-option.active { border-color: #198754; background-color: #f8f9fa; }
+.account-label { margin-top: 6px; font-weight: 600; color: #46802F; }
+.account-option.active { border-color: #46802F; background-color: #f8f9fa; }
 
 /* Separador “O” */
 .login-or { position: relative; text-align: center; }
