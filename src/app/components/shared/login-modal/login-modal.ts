@@ -1,6 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AuthPocketbaseService } from '../../../services/auth-pocketbase.service';
+import { VirtualRouter } from '../../../services/virtual-router';
 
 @Component({
   selector: 'app-login-modal',
@@ -20,7 +21,9 @@ export class LoginModal {
   providerNotice = '';
   showPass = false;
 
-  constructor(private auth: AuthPocketbaseService) {}
+  constructor(
+    public virtualRouter: VirtualRouter,
+    private auth: AuthPocketbaseService) {}
 
   togglePass() { this.showPass = !this.showPass; }
 
@@ -50,8 +53,9 @@ export class LoginModal {
       }
 
       // Opcional: cerrar modal automáticamente
-      // const modal = document.getElementById('login-modal');
-      // (window as any).bootstrap?.Modal.getOrCreateInstance(modal!)?.hide();
+      const modal = document.getElementById('login-modal');
+      (window as any).bootstrap?.Modal.getOrCreateInstance(modal!)?.hide();
+      this.virtualRouter.navigate('dashboard');
     } catch (e: any) {
       this.errorMsg = e?.message || 'Error al iniciar sesión.';
     } finally {

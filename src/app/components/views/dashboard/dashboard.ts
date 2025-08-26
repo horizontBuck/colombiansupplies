@@ -1,9 +1,10 @@
-import { Component, AfterViewInit, inject } from '@angular/core';
+import { Component, AfterViewInit, inject, OnInit } from '@angular/core';
 import { ScriptLoaderService } from '../../../services/script-loader.service';
 import { RecentlyAdded } from '../../dashboard-sections/recently-added/recently-added';
 import { CommonModule } from '@angular/common';
 import { RecentInvoices } from "../../dashboard-sections/recent-invoices/recent-invoices";
 import { RecentOrders } from '../../dashboard-sections/recent-orders/recent-orders';
+import { AuthPocketbaseService } from '../../../services/auth-pocketbase.service';
 
 declare const bootstrap: any;
 
@@ -19,9 +20,19 @@ declare const bootstrap: any;
   templateUrl: './dashboard.html',
   styleUrls: ['./dashboard.css']
 })
-export class Dashboard implements AfterViewInit {
+export class Dashboard implements AfterViewInit, OnInit {
+  constructor(public auth: AuthPocketbaseService) {}
+
+  userName: string = '';
+
   private scriptLoader = inject(ScriptLoaderService);
 
+  ngOnInit(): void {
+    const user = this.auth.currentUser;
+    if (user) {
+      this.userName = user['name'] || user['username'] || 'Usuario';
+    }
+  }
   async ngAfterViewInit(): Promise<void> {
     try {
       // 1) Base: jQuery -> Bootstrap (orden seguro para el resto)

@@ -40,6 +40,6 @@ import { VirtualRouter } from './services/virtual-router';
 export class App {
   protected readonly title = signal('colombia-tours');
   constructor( public virtualRouter: VirtualRouter) {
-    this.virtualRouter.navigate('dashboard');
+    this.virtualRouter.navigate('home');
   }
 }

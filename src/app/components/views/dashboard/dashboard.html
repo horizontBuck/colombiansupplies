@@ -13,7 +13,7 @@
                             <img src="assets/img/users/user-43.jpg" alt="image" class="img-fluid rounded-circle">
                             <a href="agent-settings.html" class="avatar avatar-sm rounded-circle btn btn-primary d-flex align-items-center justify-content-center p-0"><i class="isax isax-edit-2 fs-14"></i></a>
                         </div>
-                        <h6 class="fs-16">Chris Foxy</h6>
+                        <h6 class="fs-16">{{ auth.currentUser?.['username'] || 'Usuario' }}</h6>
                         <p class="fs-14 mb-2">Member Since 10 May 2025</p>
                         <div class="d-flex align-items-center justify-content-center notify-item">
                             <a href="agent-notifications.html" class="rounded-circle btn btn-white d-flex align-items-center justify-content-center p-0 me-2 position-relative">
