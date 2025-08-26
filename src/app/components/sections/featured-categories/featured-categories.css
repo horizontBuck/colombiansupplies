@@ -1,0 +1,39 @@
+.categories-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.categories-card a {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%; /* This creates a 1:1 aspect ratio */
+  overflow: hidden;
+}
+
+.categories-card img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This ensures the image covers the square area while maintaining aspect ratio */
+  object-position: center;
+  transition: transform 0.3s ease;
+}
+
+.categories-card:hover img {
+  transform: scale(1.05);
+}
+
+.cat-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.25rem;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  color: white;
+}

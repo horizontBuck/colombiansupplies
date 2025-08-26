@@ -1,0 +1,70 @@
+/* Ensure slide images are perfect squares */
+.slide-images {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%; /* This creates a 1:1 aspect ratio */
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.slide-images a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f9fa;
+}
+
+.slide-images img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the area while maintaining aspect ratio */
+  object-position: center; /* Centers the image within the container */
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect for better user interaction */
+.slide-images:hover img {
+  transform: scale(1.05);
+}
+
+/* Ensure the carousel container maintains proper height */
+.img-slider.owl-carousel {
+  position: relative;
+  width: 100%;
+}
+
+/* Navigation arrows positioning */
+.owl-carousel .owl-nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.owl-carousel .owl-nav button {
+  pointer-events: auto;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9) !important;
+  color: #333 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.owl-carousel .owl-nav button:hover {
+  background: #46802F !important;
+  color: white !important;
+}

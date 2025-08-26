@@ -7,224 +7,112 @@
             <div class="card">
                 <div class="card-body">
                     <div class="banner-form">
-                        <form class="d-lg-flex">
-                            <div class="d-flex  form-info">
-                                <div class="form-item dropdown">
-                                    <div data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" role="menu">
-                                        <label class="form-label fs-14 text-default mb-1">A donde deseas ir?</label>
-                                        <input type="text" class="form-control" value="Cartagena">
-                                        <p class="fs-12 mb-0">Colombia</p>
-                                    </div>
-                                    <div class="dropdown-menu dropdown-md p-0">
-                                        <div class="input-search p-3 border-bottom">
-                                            <div class="input-group">
-                                                <input type="text" class="form-control" placeholder="Search for City, Property name or Location">
-                                                <span class="input-group-text px-2 border-start-0"><i class="isax isax-search-normal"></i></span>
-                                            </div>
-                                        </div>
-                                        <ul>
-                                            <li class="border-bottom">
-                                                <a class="dropdown-item" href="javascript:void(0);">
-                                                    <h6 class="fs-16 fw-medium">Cartagena</h6>
-                                                    <p>2000 Properties</p>
-                                                </a>
-                                            </li>
-                                            <li class="border-bottom">
-                                                <a class="dropdown-item" href="javascript:void(0);">
-                                                    <h6 class="fs-16 fw-medium">Barranquilla</h6>
-                                                    <p>3000 Properties</p>
-                                                </a>
-                                            </li>
-                                            <li class="border-bottom">
-                                                <a class="dropdown-item" href="javascript:void(0);">
-                                                    <h6 class="fs-16 fw-medium">Santa Marta</h6>
-                                                    <p>8000 Properties</p>
-                                                </a>
-                                            </li>
-                                            <li class="border-bottom">
-                                                <a class="dropdown-item" href="javascript:void(0);">
-                                                    <h6 class="fs-16 fw-medium">Medellín</h6>
-                                                    <p>8000 Properties</p>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a class="dropdown-item" href="javascript:void(0);">
-                                                    <h6 class="fs-16 fw-medium">Eje cafetero</h6>
-                                                    <p>2000 Properties</p>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
+                        <div class="d-flex form-info">
+
+                            <!-- Buscador de artesanías -->
+                            <div class="form-item dropdown">
+                              <div data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" role="menu">
+                                <label class="form-label fs-14 text-default mb-1">¿Qué artesanía buscas?</label>
+                                <input type="text" class="form-control" value="Mochilas Wayuu">
+                                <p class="fs-12 mb-0">Artesanía Colombiana</p>
+                              </div>
+                              <div class="dropdown-menu dropdown-md p-0">
+                                <div class="input-search p-3 border-bottom">
+                                  <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Buscar por producto, categoría o región">
+                                    <span class="input-group-text px-2 border-start-0"><i class="isax isax-search-normal"></i></span>
+                                  </div>
                                 </div>
-                                <div class="form-item">
-                                    <label class="form-label fs-14 text-default mb-1">Fecha</label>
-                                    <input type="text" class="form-control datetimepicker" value="21-10-2025">
-                                    <p class="fs-12 mb-0">MonDías</p>
-                                </div>
-                                <div class="form-item">
-                                    <label class="form-label fs-14 text-default mb-1">Check Out</label>
-                                    <input type="text" class="form-control datetimepicker" value="21-10-2025">
-                                    <p class="fs-12 mb-0">MonDías</p>
-                                </div>
-                                <div class="form-item dropdown">
-                                    <div data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" role="menu">
-                                        <label class="form-label fs-14 text-default mb-1">Personas </label>
-                                        <h5>4 <span class="fw-normal fs-14">Personas</span></h5>
-                                        <p class="fs-12 mb-0">2 Adulto</p>
-                                    </div>
-                                    <div class="dropdown-menu dropdown-menu-end dropdown-xl">
-                                        <h5 class="mb-3">Select Travelers &  Class</h5>
-                                        <div class="mb-3 border br-10 info-item pb-1">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <div class="mb-3 d-flex align-items-center justify-content-between">
-                                                        <label class="form-label text-gray-9 mb-2">Rooms</label>
-                                                        <div class="custom-increment">
-                                                            <div class="input-group">
-                                                                <span class="input-group-btn float-start">
-																	<button type="button" class="quantity-left-minus btn btn-light btn-number"  data-type="minus" data-field="">
-																	  <span><i class="isax isax-minus"></i></span>
-                                                                </button>
-                                                                </span>
-                                                                <input type="text" name="quantity" class=" input-number" value="01">
-                                                                <span class="input-group-btn float-end">
-																	<button type="button" class="quantity-right-plus btn btn-light btn-number" data-type="plus" data-field="">
-																		<span><i class="isax isax-add"></i></span>
-                                                                </button>
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-12">
-                                                    <div class="mb-3 d-flex align-items-center justify-content-between">
-                                                        <label class="form-label text-gray-9 mb-2">Adultos</label>
-                                                        <div class="custom-increment">
-                                                            <div class="input-group">
-                                                                <span class="input-group-btn float-start">
-																	<button type="button" class="quantity-left-minus btn btn-light btn-number"  data-type="minus" data-field="">
-																	  <span><i class="isax isax-minus"></i></span>
-                                                                </button>
-                                                                </span>
-                                                                <input type="text" name="quantity" class=" input-number" value="01">
-                                                                <span class="input-group-btn float-end">
-																	<button type="button" class="quantity-right-plus btn btn-light btn-number" data-type="plus" data-field="">
-																		<span><i class="isax isax-add"></i></span>
-                                                                </button>
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-12">
-                                                    <div class="mb-3 d-flex align-items-center justify-content-between">
-                                                        <label class="form-label text-gray-9 mb-2">Niños <span class="text-default fw-normal">( 2-12 Yrs )</span></label>
-                                                        <div class="custom-increment">
-                                                            <div class="input-group">
-                                                                <span class="input-group-btn float-start">
-																	<button type="button" class="quantity-left-minus btn btn-light btn-number"  data-type="minus" data-field="">
-																	  <span><i class="isax isax-minus"></i></span>
-                                                                </button>
-                                                                </span>
-                                                                <input type="text" name="quantity" class=" input-number" value="01">
-                                                                <span class="input-group-btn float-end">
-																	<button type="button" class="quantity-right-plus btn btn-light btn-number" data-type="plus" data-field="">
-																		<span><i class="isax isax-add"></i></span>
-                                                                </button>
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-12">
-                                                    <div class="mb-3 d-flex align-items-center justify-content-between">
-                                                        <label class="form-label text-gray-9 mb-2">Bebés <span class="text-default fw-normal">( 0-12 Yrs )</span></label>
-                                                        <div class="custom-increment">
-                                                            <div class="input-group">
-                                                                <span class="input-group-btn float-start">
-																	<button type="button" class="quantity-left-minus btn btn-light btn-number"  data-type="minus" data-field="">
-																	  <span><i class="isax isax-minus"></i></span>
-                                                                </button>
-                                                                </span>
-                                                                <input type="text" name="quantity" class=" input-number" value="01">
-                                                                <span class="input-group-btn float-end">
-																	<button type="button" class="quantity-right-plus btn btn-light btn-number" data-type="plus" data-field="">
-																		<span><i class="isax isax-add"></i></span>
-                                                                </button>
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="mb-3 border br-10 info-item pb-1">
-                                            <h6 class="fs-16 fw-medium mb-2">Travellers</h6>
-                                            <div class="d-flex align-items-center flex-wrap">
-                                                <div class="form-check me-3 mb-3">
-                                                    <input class="form-check-input" type="radio" name="room" id="room1" checked>
-                                                    <label class="form-check-label" for="room1">
-                                                        Single
-                                                    </label>
-                                                </div>
-                                                <div class="form-check me-3 mb-3">
-                                                    <input class="form-check-input" type="radio" name="room" id="room2">
-                                                    <label class="form-check-label" for="room2">
-                                                        Double
-                                                    </label>
-                                                </div>
-                                                <div class="form-check me-3 mb-3">
-                                                    <input class="form-check-input" type="radio" name="room" id="room3">
-                                                    <label class="form-check-label" for="room3">
-                                                        Delux
-                                                    </label>
-                                                </div>
-                                                <div class="form-check mb-3">
-                                                    <input class="form-check-input" type="radio" name="room" id="room4">
-                                                    <label class="form-check-label" for="room4">
-                                                        Suite
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="mb-3 border br-10 info-item pb-1">
-                                            <h6 class="fs-16 fw-medium mb-2">Property Type</h6>
-                                            <div class="d-flex align-items-center flex-wrap">
-                                                <div class="form-check me-3 mb-3">
-                                                    <input class="form-check-input" type="radio" name="property" id="property1" checked>
-                                                    <label class="form-check-label" for="property1">
-                                                        Villa
-                                                    </label>
-                                                </div>
-                                                <div class="form-check me-3 mb-3">
-                                                    <input class="form-check-input" type="radio" name="property" id="property2">
-                                                    <label class="form-check-label" for="property2">
-                                                        Condo
-                                                    </label>
-                                                </div>
-                                                <div class="form-check me-3 mb-3">
-                                                    <input class="form-check-input" type="radio" name="property" id="property3">
-                                                    <label class="form-check-label" for="property3">
-                                                        Cabin
-                                                    </label>
-                                                </div>
-                                                <div class="form-check mb-3">
-                                                    <input class="form-check-input" type="radio" name="property" id="property4">
-                                                    <label class="form-check-label" for="property4">
-                                                        Apartments
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex justify-content-end">
-                                            <a href="javascript:void(0);" class="btn btn-light btn-sm me-2">Cancel</a>
-                                            <button type="submit" class="btn btn-primary btn-sm">Apply</button>
-                                        </div>
-                                    </div>
-                                </div>
+                                <ul>
+                                  <li class="border-bottom"><a class="dropdown-item" href="#"><h6 class="fs-16 fw-medium">Mochilas Wayuu</h6><p>120 artesanos</p></a></li>
+                                  <li class="border-bottom"><a class="dropdown-item" href="#"><h6 class="fs-16 fw-medium">Sombreros Vueltiaos</h6><p>80 artesanos</p></a></li>
+                                  <li class="border-bottom"><a class="dropdown-item" href="#"><h6 class="fs-16 fw-medium">Ruana Boyacense</h6><p>45 artesanos</p></a></li>
+                                  <li class="border-bottom"><a class="dropdown-item" href="#"><h6 class="fs-16 fw-medium">Hamacas de San Jacinto</h6><p>60 artesanos</p></a></li>
+                                  <li><a class="dropdown-item" href="#"><h6 class="fs-16 fw-medium">Cerámica de Ráquira</h6><p>150 artesanos</p></a></li>
+                                </ul>
+                              </div>
                             </div>
-                            <button type="submit" class="btn btn-primary search-btn rounded">Buscar</button>
-                        </form>
+                          
+                            <!-- Categoría -->
+                            <div class="form-item dropdown">
+                              <div data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" role="menu">
+                                <label class="form-label fs-14 text-default mb-1">Categoría</label>
+                                <input type="text" class="form-control" value="Tejidos">
+                                <p class="fs-12 mb-0">Bolsos, mochilas, tapices</p>
+                              </div>
+                              <div class="dropdown-menu dropdown-md p-0">
+                                <div class="input-search p-3 border-bottom">
+                                  <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Buscar categoría">
+                                    <span class="input-group-text px-2 border-start-0"><i class="isax isax-search-normal"></i></span>
+                                  </div>
+                                </div>
+                                <ul>
+                                  <li class="border-bottom"><a class="dropdown-item" href="#"><h6 class="fs-16 fw-medium">Tejidos</h6><p>Mochilas, tapices, ruanas</p></a></li>
+                                  <li class="border-bottom"><a class="dropdown-item" href="#"><h6 class="fs-16 fw-medium">Cerámica</h6><p>Vasijas, figuras, alcancías</p></a></li>
+                                  <li class="border-bottom"><a class="dropdown-item" href="#"><h6 class="fs-16 fw-medium">Joyería</h6><p>Collares, pulseras, aretes</p></a></li>
+                                  <li class="border-bottom"><a class="dropdown-item" href="#"><h6 class="fs-16 fw-medium">Cestería</h6><p>Canastos, esteras, sombreros</p></a></li>
+                                  <li><a class="dropdown-item" href="#"><h6 class="fs-16 fw-medium">Cuero</h6><p>Bolsos, cinturones, sandalias</p></a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          
+                            <!-- Material -->
+                            <div class="form-item dropdown">
+                              <div data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" role="menu">
+                                <label class="form-label fs-14 text-default mb-1">Material</label>
+                                <input type="text" class="form-control" value="Fique">
+                                <p class="fs-12 mb-0">Natural y reciclado</p>
+                              </div>
+                              <div class="dropdown-menu dropdown-md p-0">
+                                <div class="input-search p-3 border-bottom">
+                                  <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Buscar material">
+                                    <span class="input-group-text px-2 border-start-0"><i class="isax isax-search-normal"></i></span>
+                                  </div>
+                                </div>
+                                <ul>
+                                  <li class="border-bottom"><a class="dropdown-item" href="#"><h6 class="fs-16 fw-medium">Fique</h6><p>Bolsos y mochilas</p></a></li>
+                                  <li class="border-bottom"><a class="dropdown-item" href="#"><h6 class="fs-16 fw-medium">Algodón</h6><p>Tapices, hamacas, ropa</p></a></li>
+                                  <li class="border-bottom"><a class="dropdown-item" href="#"><h6 class="fs-16 fw-medium">Lana</h6><p>Ruanas, bufandas</p></a></li>
+                                  <li class="border-bottom"><a class="dropdown-item" href="#"><h6 class="fs-16 fw-medium">Madera</h6><p>Esculturas, utensilios</p></a></li>
+                                  <li><a class="dropdown-item" href="#"><h6 class="fs-16 fw-medium">Arcilla</h6><p>Cerámica artesanal</p></a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          
+                            <!-- Personalización -->
+                            <div class="form-item dropdown">
+                              <div data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" role="menu">
+                                <label class="form-label fs-14 text-default mb-1">Personalización</label>
+                                <h5>Bordados <span class="fw-normal fs-14">Opcionales</span></h5>
+                                <p class="fs-12 mb-0">Con nombre o diseño</p>
+                              </div>
+                              <div class="dropdown-menu dropdown-menu-end dropdown-xl">
+                                <h5 class="mb-3">Opciones de Personalización</h5>
+                                <div class="mb-3 border br-10 info-item pb-1">
+                                  <div class="form-check me-3 mb-3">
+                                    <input class="form-check-input" type="radio" name="bordado" id="op1" checked>
+                                    <label class="form-check-label" for="op1">Sin personalización</label>
+                                  </div>
+                                  <div class="form-check me-3 mb-3">
+                                    <input class="form-check-input" type="radio" name="bordado" id="op2">
+                                    <label class="form-check-label" for="op2">Con nombre</label>
+                                  </div>
+                                  <div class="form-check me-3 mb-3">
+                                    <input class="form-check-input" type="radio" name="bordado" id="op3">
+                                    <label class="form-check-label" for="op3">Diseño personalizado</label>
+                                  </div>
+                                </div>
+                                <div class="d-flex justify-content-end">
+                                  <a href="javascript:void(0);" class="btn btn-light btn-sm me-2">Cancelar</a>
+                                  <button type="submit" class="btn btn-primary btn-sm">Aplicar</button>
+                                </div>
+                              </div>
+                            </div>
+                          
+                          </div>
+                          
                     </div>
                 </div>
             </div>
