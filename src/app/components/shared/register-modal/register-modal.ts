@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { AuthPocketbaseService } from '../../../services/auth-pocketbase.service';
 import { EmailService } from '../../../services/email.service';
-
+import { firstValueFrom } from 'rxjs';
 @Component({
   selector: 'app-register-modal',
   standalone: true,
@@ -132,13 +132,18 @@ export class RegisterModal {
       await this.auth.register(dto);
 
       // 2) Email de bienvenida (no bloqueante)
-      this.emailService.sendWelcome({
+      /* this.emailService.sendWelcome({
         toEmail: dto.email,
         toName: dto.name || 'Usuario',
-        templateId: 6,
+        templateId: 8,
         params: { name: dto.name || 'Usuario', accountType: dto.accountType, businessName: dto.businessName || '' }
       }).subscribe({ error: (err) => console.warn('Email bienvenida falló:', err) });
-
+       */await firstValueFrom(this.emailService.sendWelcome({
+        toEmail: dto.email,
+        toName: dto.name || 'Usuario',
+        templateId: 8,
+        params: { name: dto.name || 'Usuario', accountType: dto.accountType, businessName: dto.businessName || '' }
+      }));
       // 3) OK UX
       this.okMsg = this.selectedAccountType === 'proveedor'
         ? 'Cuenta creada. Tu perfil de proveedor está pendiente de aprobación.'
